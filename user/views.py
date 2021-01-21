@@ -7,13 +7,14 @@ from django.shortcuts import render
 class UserListView(ListView):
     model = Userprofile
     form_class = Userprofileform
-    # context_object_name = 'students'
+    context_object_name = 'list'
+    template_name='user_list.html'
 
 class UserCreateView(CreateView):
     model = Userprofile
     form_class = Userprofileform
     template_name = "userprofile_form.html"
-    success_url="/"
+    success_url="userlist"
 
 def load_services(request):
     form=Userprofileform()

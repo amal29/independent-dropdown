@@ -25,8 +25,8 @@ class Doctor(models.Model):
 
 class Userprofile(models.Model):
     name = models.CharField(max_length=100)
-    coverpicture = models.ImageField(upload_to='images',default=None)
-    photo = models.ImageField(upload_to='images',default=None)
+    coverpicture = models.ImageField(upload_to='images')
+    photo = models.ImageField(upload_to='images')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     service=models.ForeignKey(Service, on_delete=models.CASCADE)
     doctor_name=models.ForeignKey(Doctor, on_delete=models.CASCADE)
